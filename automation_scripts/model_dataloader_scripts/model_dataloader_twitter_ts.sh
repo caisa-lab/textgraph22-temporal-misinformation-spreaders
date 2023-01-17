@@ -1,0 +1,17 @@
+python ../src/model_dataloader.py \
+--n_users=200 \
+--n_train_samples=1000 \
+--n_val_samples=200 \
+--base_dataset='../data/twitter_dataset/twitter_dataset_filtered_cleaned.gzip' \
+--source_frames='../data/twitter_dataset/linguistic/cosine/avg/bert_delta30/source' \
+--sample_dir='../data/twitter_dataset/model_samples_avg/ts_bert_delta30/' \
+--user_ids='../data/twitter_dataset/user_splits/' \
+--threshold=0.8 \
+--do_user_split='f' \
+--percentage=1 \
+--train_min_index=0 \
+--train_max_index=8 \
+--val_min_index=8 \
+--val_max_index=12 \
+--test_min_index=12 \
+--test_max_index=16 |& tee ../logs/ling_dataloader_timesplit_ts.txt
